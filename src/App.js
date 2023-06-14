@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import HomeMainPage from './Swiggy/HomeMainPage';
 import './App.css';
+import HomePage from './Swiggy/HomePage';
+import Content from './Swiggy/Content';
+import Information from './Swiggy/Information';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <>
+    <div style={{display:"flex"}}>
+     <HomeMainPage />
+     <HomePage>
+     
+     </HomePage>
     </div>
+    <Content />
+    <Information />
+    </>
   );
 }
 
