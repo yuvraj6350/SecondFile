@@ -10,7 +10,7 @@ function App() {
     <div style={{display:"flex"}}>
      <HomeMainPage />
      <HomePage>
-     
+
      </HomePage>
     </div>
     <Content />

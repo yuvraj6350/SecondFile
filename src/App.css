@@ -229,6 +229,7 @@ input[class=input]{
 
 
 .loginOrder{
+  position:relative;
     margin-left: 42px;
     padding:20px;
     width:23%;
@@ -289,4 +290,11 @@ input[class=input]{
   from {top: 10px; opacity: 0.1;}
   to {top: 0px;}
 }
-  
+.error{
+  position :absolute;
+  left:0;
+  margin-left: 4%;
+ margin-top: 1.5%;
+  background-color: white;
+  color:red;
+}
