@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-const contentList = ["Hungry ?", "Unexpected guest ?", "Game night ?", "Late night at office ?" , "Cooking gone wrong ?"];
+const contentList = ["Hungry ?", "Unexpected guest ?", "Game night ?", "Late night at office ?" , "Cooking gone wrong ?" ,"Movie Marathone ?"];
 
 function ContentForYou() {
     const [counter, setCounter] = useState(0);

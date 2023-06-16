@@ -283,7 +283,6 @@ input[class=input]{
   position: relative;
   animation: mymove 2s infinite;
   animation-name: mymove;
- 
 }
 
 @keyframes mymove {
@@ -297,4 +296,31 @@ input[class=input]{
  margin-top: 1.5%;
   background-color: white;
   color:red;
+}
+.BackIcon{
+  background: none;
+  border: none;
+  font-size: 35px;
+ 
+}
+.link1{
+  padding-left: 47%;
+  padding-top: 35px;
+  text-decoration: none;
+  color:#3d4152;
+
+}
+.link2{
+  padding-top: 35px;
+  padding-left: 4%;
+  text-decoration: none;
+  color:#3d4152;
+}
+.link3{
+  padding-top: 35px;
+  padding-left: 4%;
+  text-decoration: none;
+  color:#3d4152;
+
+
 }

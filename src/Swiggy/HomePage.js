@@ -4,7 +4,7 @@ function HomePage() {
   return (
     <>
 
-    <div className='foodImage'></div>
+    <div className='foodImage' ></div>
     </>
   )
 }

@@ -1,15 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import OrderInput from './OrderInput';
 import LoginButton from './LoginButton';
+import { useNavigate } from 'react-router-dom';
 
-function CreateAccount({ setAccount, setLoginInfo }) {
+function CreateAccount({ setAccount }) {
+const navigate = useNavigate()
   const [phoneno, setPhoneno] = useState('');
   const [phoneError, setPhoneError] = useState('');
   const [showOTP, setShowOTP] = useState(false);
   const [otp, setOTP] = useState('');
   const [log, setLog] = useState('');
   const[login , setLogin] = useState('')
-
   const handleAccount = () => {
     setAccount(false);
   };
@@ -44,7 +45,8 @@ function CreateAccount({ setAccount, setLoginInfo }) {
         setOTP('')
         setPhoneno('')
         setTimeout(() => {
-          setAccount(false); // Close the window after 2 seconds
+          setAccount(false); 
+          navigate("about")
         }, 1000);
       }
     }
@@ -56,7 +58,7 @@ function CreateAccount({ setAccount, setLoginInfo }) {
     <div>
       <div className="loginInfo">
         <div className="loginInfo1">
-          <LoginButton name="&#10006;" onClick={handleAccount} />
+          <LoginButton name="&#10006;"  className="BackIcon" onClick={handleAccount} />
           <div style={{ display: 'flex' }}>
             <div>
               <h2 style={{ padding: '0px 0px 0px 40px' }}>Login</h2>
@@ -118,7 +120,8 @@ function CreateAccount({ setAccount, setLoginInfo }) {
                   <br />
                 </>
               )}
-              <LoginButton type="submit" name="LOGIN" className="continue" />
+             
+              <LoginButton type="submit" name="LOGIN" className="continue"  />
             </form>
           </div>
 

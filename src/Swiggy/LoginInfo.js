@@ -2,11 +2,7 @@ import React, {useState } from "react";
 import OrderInput from "./OrderInput";
 import LoginButton from "./LoginButton";
 
-
-
-
 function LoginInfo({setLoginInfo}) {
-  
   const [phone, setPhone] = useState();
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -24,10 +20,11 @@ function LoginInfo({setLoginInfo}) {
   };
 
   const validatePhone = () => {
-    if (phone.length == "") {
-      setPhoneError("Enter Phone no");
-    }  else {
-      setPhoneError("");
+    if (phone.length == "" ) {
+      setPhoneError('Enter Phone no');
+    } 
+    else{
+      setPhoneError('');
     }
   };
   const validateEmail = () => {
@@ -66,7 +63,7 @@ function LoginInfo({setLoginInfo}) {
       
       <div className="loginInfo">
         <div className="loginInfo1">
-          <LoginButton name="&#10006;" onClick={(e) =>handelLoginInfo(e) }/>
+          <LoginButton name="&#10006;"   className="BackIcon" onClick={(e)=>handelLoginInfo(e) }/>
           <div style={{ display: "flex" }}>
             <div>
               <h2 style={{ padding: "0px 0px 0px 40px " }}>Sign up</h2>
@@ -85,6 +82,7 @@ function LoginInfo({setLoginInfo}) {
                 width: "100px",
               }}
               src="https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Image-login_btpq7r"
+              alt="food"
             />
           </div>
           <div style={{ paddingTop: "30px" }}>
