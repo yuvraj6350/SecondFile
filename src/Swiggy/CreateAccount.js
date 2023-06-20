@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import OrderInput from './OrderInput';
 import LoginButton from './LoginButton';
+// import AboutUser from './AboutUser';
+
+
 import { useNavigate } from 'react-router-dom';
 
 function CreateAccount({ setAccount }) {
@@ -11,6 +14,9 @@ const navigate = useNavigate()
   const [otp, setOTP] = useState('');
   const [log, setLog] = useState('');
   const[login , setLogin] = useState('')
+  // const [about ,setAbout] = useState(false)
+ 
+
   const handleAccount = () => {
     setAccount(false);
   };
@@ -26,6 +32,7 @@ const navigate = useNavigate()
       setPhoneError('');
     }
   };
+
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -44,18 +51,17 @@ const navigate = useNavigate()
         setLog('');
         setOTP('')
         setPhoneno('')
-        setTimeout(() => {
-          setAccount(false); 
-          navigate("about")
-        }, 1000);
+        navigate("about")
+        // setAbout(true)
+        
       }
     }
    
-     
   };
-
+ 
   return (
     <div>
+    {/* {!about  ? */}
       <div className="loginInfo">
         <div className="loginInfo1">
           <LoginButton name="&#10006;"  className="BackIcon" onClick={handleAccount} />
@@ -120,8 +126,7 @@ const navigate = useNavigate()
                   <br />
                 </>
               )}
-             
-              <LoginButton type="submit" name="LOGIN" className="continue"  />
+            <LoginButton type="submit" name="LOGIN" className="continue" /> 
             </form>
           </div>
 
@@ -137,8 +142,12 @@ const navigate = useNavigate()
         
             <h1 style={{paddingLeft:"3%",fontSize:"45px" ,color:"lightgreen"}}>{login}</h1>
         </div>
+        
       </div>
-    
+           {/* :( <>
+          
+           
+           </>)} */}
     </div>
   );
 }

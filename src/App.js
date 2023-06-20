@@ -6,10 +6,12 @@ import Information from './Swiggy/Information';
 
 
 
+
 function App() {
   return (
     <>
     <div style={{display:"flex"}}>
+  
      <HomeMainPage />
      <HomePage>
      </HomePage>
@@ -22,3 +24,4 @@ function App() {
 }
 
 export default App;
+

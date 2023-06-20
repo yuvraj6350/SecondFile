@@ -1,29 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from 'react';
+import Help from './Help';
+import Profile from './Profile';
+import Cart from './Cart';
 
+const AboutUser = () => {
 
-function AboutUser() {
-    
-  return (
-    <div style={{display:"flex" }}>
-    <header>
-         <img
-          src="https://play-lh.googleusercontent.com/A8jF58KO1y2uHPBUaaHbs9zSvPHoS1FrMdrg8jooV9ftDidkOhnKNWacfPhjKae1IA"
-          width="64"
-          height="69"
-          style={{
-            paddingLeft: "17%",
-            paddingTop: "12px",
-            
-          }} />
-       
+const [activeComponent, setActiveComponent] = useState('Help');
 
-            <Link className="link1" to="/profile">Home</Link>
-            <Link  className="link2" to="/help">Blogs</Link>
-            <Link className="link3" to="/cart">Contact</Link>
-      
-    </header>
-    </div>
-  );
-}
+const handleLinkClick = (componentName) => {
+
+setActiveComponent(componentName);
+
+};
+
+return (
+<div>
+<header style={{boxShadow:" 0 0 20px grey" ,display:"flex" }}>
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPtoCCzL8g4RXSiVc1Dn8_L1gqE_LF4YUUEx622YDV&s"  height=" 50px"
+  style={{
+   paddingLeft:"20%",
+   paddingTop:'15px',
+   paddingBottom:"20px"
+  }}/>
+ 
+<button className="button3" onClick={() => handleLinkClick('Help')}>Help</button>
+<button  className="button4" onClick={() => handleLinkClick('Profile')}>Profile</button>
+<button className="button5" onClick={() => handleLinkClick('Cart')}>Cart</button>
+</header>
+{activeComponent === 'Help' ? <Help /> : activeComponent
+=== 'Profile' ? <Profile /> : activeComponent === 'Cart'?
+<Cart /> : '' }
+</div>
+);
+};
+
 export default AboutUser;

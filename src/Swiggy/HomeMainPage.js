@@ -5,12 +5,17 @@ import LoginInfo from "./LoginInfo";
 import ContentForYou from "./ContentForYou";
 import CreateAccount from "./CreateAccount";
 
+
+
+
 function HomeMainPage() {
+ 
+
   const [loginInfo, setLoginInfo] = useState(false);
   const [Account, setAccount] = useState(false);
   const [location, setLocation] = useState("");
   const [inputValue, setInputValue] = useState("");
-
+  
   function handelInput(e) {
     if (inputValue.length == 0) {
       console.log("if");
@@ -41,9 +46,12 @@ function HomeMainPage() {
   }
 
   return (
-    <div className="main">
+    <>
+
+    <div className="main" >
+    
       {Account ? (
-        <CreateAccount setAccount={setAccount} setLoginInfo={setLoginInfo} />
+        <CreateAccount setAccount={setAccount} setLoginInfo={setLoginInfo}  />
       ) : (
         ""
       )}
@@ -75,7 +83,7 @@ function HomeMainPage() {
             onInput={(e) => handelInput(e)}
             placeholder="Enter Your Delivery Location"
           />
-          <LoginButton className="button2" name="FIND FOOD" />
+          <LoginButton  name="FIND FOOD" className="button2" />
         </form>
         {location && <p className="location">{location}</p>}
       </div>
@@ -92,6 +100,7 @@ function HomeMainPage() {
       <p>Ahmedabad Bangalore Chennai Delhi Gurgaon Hyderabad Kolkata Mumbai</p>
       <p> Pune& more.</p>
     </div>
+    </>
   );
 }
 
